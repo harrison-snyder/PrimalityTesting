@@ -9,16 +9,16 @@ In this report, we will go through a few of the most widely known primality test
 
 ## Code Usage 
 
-### Fermat's Primality Test
+###   Fermat's Primality Test
 
-### AKS Primality Test
+###   AKS Primality Test
 
-### Miller Rabin Primality Test
+###   Miller Rabin Primality Test
 
-### Ballie PSW
+###   Ballie PSW
 
-### Helper Functions
-#### Extended Euclidean Algorithim
+###   Helper Functions
+####     Extended Euclidean Algorithim
 
 
 
