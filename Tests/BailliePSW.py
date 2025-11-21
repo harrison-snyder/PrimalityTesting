@@ -122,4 +122,4 @@ def baillpswstart():
 
 prime = getPrime(1024)
 assert baillie_psw(prime) == True
-assert baillie_psw(19) == Rrue
+assert baillie_psw(19) == True
