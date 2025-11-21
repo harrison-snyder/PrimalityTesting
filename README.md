@@ -13,6 +13,8 @@ In this report, we will go through a few of the most widely known primality test
 
 ###   AKS Primality Test
 
+The AKS.py file is standalone and only needs to be run as a single python file. It asks for the number in question within the terminal, and outputs whether or not it is prime or composite. The comments within the code can help link to the process of AKS primality testing to explain the linkage and how it operates.
+
 ###   Miller Rabin Primality Test
 
 ###   Ballie PSW
