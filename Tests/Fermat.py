@@ -1,3 +1,4 @@
+from Crypto.Util.number import getPrime
 #Fermat's Primality Testing
 import random
 
@@ -46,4 +47,7 @@ def fermatstart():
     print(type(number_of_tests))
 
     fermat(prime,number_of_tests)
-    
+
+prime = getPrime(29)
+assert fermat(prime, 10) == True
+assert fermat(11, 5) == True
