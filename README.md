@@ -23,6 +23,7 @@ The BailliePSW.py file implements a strong Lucas probable prime test. It uses ou
 
 ###   Helper Functions
 ####     Extended Euclidean Algorithim
+####     Note that the Crypto.Util.number module was installed and used for testing purposes. The getPrime helper function comes from this module. Docs/Installation instructions can be found here: https://pythonhosted.org/pycrypto/Crypto.Util.number-module.html
 
 
 
