@@ -19,6 +19,8 @@ The AKS.py file is standalone and only needs to be run as a single python file. 
 
 ###   Ballie PSW
 
+The BailliePSW.py file implements a strong Lucas probable prime test. It uses our implementation of the Miller Rabin test for a base-2 test of compositeness. Then, it combines both those testes into one function. The comments within the code outline sources where the implementation has been adapted from. The program takes one integer from the input but also runs a test on a prime number automatically. 
+
 ###   Helper Functions
 ####     Extended Euclidean Algorithim
 
