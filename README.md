@@ -11,17 +11,26 @@ In this report, we will go through a few of the most widely known primality test
 
 ###   Fermat's Primality Test
 
+Fermat.py file tests multiple random candidates to see if they show that the chosen number is composite. It will do this a specified amount of times with distinct random test numbers
+
 ###   AKS Primality Test
 
 The AKS.py file is standalone and only needs to be run as a single python file. It asks for the number in question within the terminal, and outputs whether or not it is prime or composite. The comments within the code can help link to the process of AKS primality testing to explain the linkage and how it operates.
 
 ###   Miller Rabin Primality Test
 
+The MR tests for compositeness with respect to a chosen base. It uses the gcd function in the helpers folder. The comments onn the code will explain the uses.
+
 ###   Ballie PSW
 
 The BailliePSW.py file implements a strong Lucas probable prime test. It uses our implementation of the Miller Rabin test for a base-2 test of compositeness. Then, it combines both those testes into one function. The comments within the code outline sources where the implementation has been adapted from. The program takes one integer from the input but also runs a test on a prime number automatically. 
 
 ###   Helper Functions
+
+
+This section has two functions, mrTest is the actual test that takes the inputed number and checks for compositeness
+
+
 ####     Extended Euclidean Algorithim
 
 
