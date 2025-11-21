@@ -32,6 +32,7 @@ This section has two functions, mrTest is the actual test that takes the inputed
 
 
 ####     Extended Euclidean Algorithim
+####     Note that the Crypto.Util.number module was installed and used for testing purposes. The getPrime helper function comes from this module. Docs/Installation instructions can be found here: https://pythonhosted.org/pycrypto/Crypto.Util.number-module.html
 
 
 
