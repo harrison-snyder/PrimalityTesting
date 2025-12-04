@@ -1,5 +1,6 @@
 
 from helpers.gcd import euclidean_gcd
+import time
 
 # Uses gcd from helper functions folder
 
@@ -15,11 +16,11 @@ def mrTest(pc,a):
     ast = a
     if (pc % 2 == 0): # check if candidate is even
         print(pc, " is composite from being even")
-        return
+        return True
     d = euclidean_gcd(pc,a) 
     if(d > 1 and d < pc): #Check if the gcd is 1, composite if not
         print(pc, " is composite from gcd")
-        return
+        return True
     n1 = pc - 1
     q = n1
     k = 0
@@ -29,14 +30,15 @@ def mrTest(pc,a):
     ast = pow(a,q,pc)
     if (ast == 1):
         print("Test failed, ", ast, " is not a witness for ", pc, " being composite")
-        return
+        return True
     for i in range(k):
         if (ast == pc - 1):
             print("Test failed, ", ast, " is not a witness for ", pc, " being composite")
-            return
+            return True
         ast = pow(ast,2,pc)
-    
+ 
     print(a, "is a witness for ", pc, "being composite")
+    return False
 
 
 
@@ -44,4 +46,16 @@ def mrStart():
     pc = int(input("Give a prime candidate to test: "))
     a = int(input("Enter your witness: "))
     mrTest(pc,a)
+
+
+def mrStartTimed():
+    pc = int(input("Give a prime candidate to test: "))
+    a = int(input("Enter your witness: "))
+    
+    start_time = time.time()
+    mrTest(pc,a)
+    end_time = time.time()
+    
+    elapsed_time = end_time - start_time
+    return elapsed_time
 

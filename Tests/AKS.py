@@ -1,5 +1,6 @@
 import math
 from math import gcd
+import time
 
 # Helper Functions
 
@@ -158,7 +159,22 @@ def aks(n: int) -> str:
 
 # Example usage
 
-if __name__ == "__main__":
+def aksStart():
     # Let the user type a number:
     n = int(input("Enter an integer n ≥ 2: "))
     print(aks(n))     # prints True if prime, False if composite
+
+
+def aksStartTimed():
+    # Let the user type a number:
+    n = int(input("Enter an integer n ≥ 2: "))
+
+    start_time = time.time()
+    aks(n)
+    end_time = time.time()
+    
+    elapsed_time = end_time - start_time
+    return elapsed_time
+
+   
+   

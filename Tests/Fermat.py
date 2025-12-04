@@ -1,6 +1,8 @@
-from Crypto.Util.number import getPrime
+#from Crypto.Util.number import getPrime
 #Fermat's Primality Testing
 import random
+from helpers.gcd import euclidean_gcd
+import time
 
 
 #basic implementation
@@ -27,8 +29,11 @@ def fermat(prime,number_of_tests):
         return
     #Checking, for a random number "a" between 2 and prime candidate minus 2, if a^(prime candidate-1)=1mod(prime candidate)
     random_number = random.sample(range(2,prime-2), number_of_tests)
+
     for i in range(number_of_tests):
+        
         print("testing ", random_number[i], " as a witness" )
+        print( "gcd:", euclidean_gcd(prime,random_number[i]))
         if (pow(random_number[i],prime-1,prime) != 1):
             print(prime, "is composite")
             return
@@ -48,6 +53,20 @@ def fermatstart():
 
     fermat(prime,number_of_tests)
 
-prime = getPrime(29)
-assert fermat(prime, 10) == True
-assert fermat(11, 5) == True
+
+def fermatStartTimed():
+    prime = int(input("Give a number greater than 3 to test: "))
+    #needs to be 3 less than the prime number because we can only test [2, prime -2]
+    number_of_tests = int(input("Enter your # tests: "))
+    start_time = time.time()
+    fermat(prime,number_of_tests)
+    end_time = time.time()
+    
+    elapsed_time = end_time - start_time
+    return elapsed_time
+
+
+#prime = getPrime(29)
+#assert fermat(prime, 10) == True
+#assert fermat(11, 5) == True
+#fermatstart()

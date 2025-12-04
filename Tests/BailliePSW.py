@@ -5,7 +5,7 @@ This implementation has been adapted from: https://github.com/armchaircaver/Bail
 Several functions have been adapted from various sources on the internet. They have been cited accordingly. 
 
 """
-from MillerRabin import mrTest
+from MilerRabin import mrTest
 from Crypto.Util.number import getPrime
 
 # from https://stackoverflow.com/questions/44531084/python-check-if-a-number-is-a-square
@@ -120,6 +120,17 @@ def baillpswstart():
     test = int(input("Give a number to be tested with Baillie-PSW: "))
     baillie_psw(test)
 
-prime = getPrime(1024)
-assert baillie_psw(prime) == True
-assert baillie_psw(19) == True
+
+def baillpswstartTimed():
+    test = int(input("Give a number to be tested with Baillie-PSW: "))
+    
+    start_time = time.time()
+    baillie_psw(test)
+    end_time = time.time()
+    
+    elapsed_time = end_time - start_time
+    return elapsed_time
+
+#prime = getPrime(1024)
+#assert baillie_psw(prime) == True
+#assert baillie_psw(19) == True
