@@ -6,13 +6,13 @@ import time
 
 
 #basic implementation
-def FPT(prime,number_of_tests):
-    random_number = random.sample(range(2,prime-2), number_of_tests) 
-                        #^ Choose random numbers to test
-    for i in range(number_of_tests):
-        if (pow(random_number[i],prime-1,prime) != 1):
-            return True #Returns Composite
-    return False        #Probably Prime
+def FPT(prime, number_of_tests):
+    for _ in range(number_of_tests):
+        # pick a random base a in [2, prime-2]
+        a = random.randrange(2, prime - 1)
+        if pow(a, prime - 1, prime) != 1:
+            return True   # composite
+    return False          # probably prime
 
 
 
@@ -32,8 +32,6 @@ def fermat(prime,number_of_tests):
 
     for i in range(number_of_tests):
         
-        print("testing ", random_number[i], " as a witness" )
-        print( "gcd:", euclidean_gcd(prime,random_number[i]))
         if (pow(random_number[i],prime-1,prime) != 1):
             print(prime, "is composite")
             return
@@ -49,7 +47,6 @@ def fermatstart():
     prime = int(input("Give a number greater than 3 to test: "))
     #needs to be 3 less than the prime number because we can only test [2, prime -2]
     number_of_tests = int(input("Enter your # tests: "))
-    print(type(number_of_tests))
 
     fermat(prime,number_of_tests)
 

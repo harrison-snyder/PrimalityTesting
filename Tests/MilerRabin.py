@@ -15,8 +15,8 @@ import time
 def mrTest(pc,a):
     ast = a
     if (pc % 2 == 0): # check if candidate is even
-        print(pc, " is composite from being even")
-        return True
+        print(pc, "is composite from being even")
+        return False
     d = euclidean_gcd(pc,a) 
     if(d > 1 and d < pc): #Check if the gcd is 1, composite if not
         print(pc, " is composite from gcd")
